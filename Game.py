@@ -1,4 +1,5 @@
 import pygame, sys, random
+import pygame.mixer
 
 def ball_movement():
     """
@@ -25,6 +26,9 @@ def ball_movement():
             score += 1  # Increase player score
             ball_speed_y *= -1  # Reverse ball's vertical direction
             # TODO Task 6: Add sound effects HERE
+            pygame.mixer.init()
+            pygame.mixer.music.load("beeep-43965.wav")
+            pygame.mixer.music.play()
 
     # Ball collision with top boundary
     if ball.top <= 0:
